@@ -1,0 +1,25 @@
+{
+  "source_pdp": 0,
+  "target_pdp": 4,
+  "strategies": [
+    "no_adaptation",
+    "decoder_input_only",
+    "decoder_residual_1_only",
+    "decoder_residual_2_only",
+    "decoder_output_head_only",
+    "entire_decoder",
+    "full_finetune"
+  ],
+  "seeds": [
+    2026,
+    2027,
+    2028
+  ],
+  "adaptation_blocks": 2048,
+  "epochs": 20,
+  "learning_rate": 0.0001,
+  "ebno_linear": 20.0,
+  "test_batches": 100,
+  "checkpoint_root": "/mnt/d/IC/project/code/wireless_pdp_project/outputs/checkpoints",
+  "output_root": "/mnt/d/IC/project/code/wireless_pdp_project/outputs/task5/task5_1_decoder_scan"
+}

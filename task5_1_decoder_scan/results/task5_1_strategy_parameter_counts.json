@@ -1,0 +1,83 @@
+[
+  {
+    "strategy": "no_adaptation",
+    "requested_layers": "",
+    "actual_trainable_layers": "",
+    "trainable_parameters": 0,
+    "frozen_parameters": 813202,
+    "total_parameters": 813202,
+    "trainable_percentage": 0.0
+  },
+  {
+    "strategy": "decoder_input_only",
+    "requested_layers": "decoder_conv_1",
+    "actual_trainable_layers": "decoder_conv_1",
+    "trainable_parameters": 102656,
+    "frozen_parameters": 710546,
+    "total_parameters": 813202,
+    "trainable_percentage": 12.623677757801875
+  },
+  {
+    "strategy": "decoder_residual_1_only",
+    "requested_layers": "decoder_res1_input; decoder_res1_conv1; decoder_res1_conv2",
+    "actual_trainable_layers": "decoder_res1_input; decoder_res1_conv1; decoder_res1_conv2",
+    "trainable_parameters": 328064,
+    "frozen_parameters": 485138,
+    "total_parameters": 813202,
+    "trainable_percentage": 40.34225198659128
+  },
+  {
+    "strategy": "decoder_residual_2_only",
+    "requested_layers": "decoder_res2_input; decoder_res2_conv1; decoder_res2_conv2",
+    "actual_trainable_layers": "decoder_res2_input; decoder_res2_conv1; decoder_res2_conv2",
+    "trainable_parameters": 73920,
+    "frozen_parameters": 739282,
+    "total_parameters": 813202,
+    "trainable_percentage": 9.089992400412198
+  },
+  {
+    "strategy": "decoder_output_head_only",
+    "requested_layers": "decoder_conv_final; pred_logits_full",
+    "actual_trainable_layers": "decoder_conv_final; pred_logits_full",
+    "trainable_parameters": 6273,
+    "frozen_parameters": 806929,
+    "total_parameters": 813202,
+    "trainable_percentage": 0.7713950531356293
+  },
+  {
+    "strategy": "decoder_input_plus_residual_1",
+    "requested_layers": "decoder_conv_1; decoder_res1_input; decoder_res1_conv1; decoder_res1_conv2",
+    "actual_trainable_layers": "decoder_conv_1; decoder_res1_input; decoder_res1_conv1; decoder_res1_conv2",
+    "trainable_parameters": 430720,
+    "frozen_parameters": 382482,
+    "total_parameters": 813202,
+    "trainable_percentage": 52.96592974439315
+  },
+  {
+    "strategy": "decoder_input_plus_residual_1_plus_residual_2",
+    "requested_layers": "decoder_conv_1; decoder_res1_input; decoder_res1_conv1; decoder_res1_conv2; decoder_res2_input; decoder_res2_conv1; decoder_res2_conv2",
+    "actual_trainable_layers": "decoder_conv_1; decoder_res1_input; decoder_res1_conv1; decoder_res1_conv2; decoder_res2_input; decoder_res2_conv1; decoder_res2_conv2",
+    "trainable_parameters": 504640,
+    "frozen_parameters": 308562,
+    "total_parameters": 813202,
+    "trainable_percentage": 62.05592214480535
+  },
+  {
+    "strategy": "entire_decoder",
+    "requested_layers": "decoder_conv_1; decoder_res1_input; decoder_res1_conv1; decoder_res1_conv2; decoder_res2_input; decoder_res2_conv1; decoder_res2_conv2; decoder_conv_final; pred_logits_full",
+    "actual_trainable_layers": "decoder_conv_1; decoder_res1_input; decoder_res1_conv1; decoder_res1_conv2; decoder_res2_input; decoder_res2_conv1; decoder_res2_conv2; decoder_conv_final; pred_logits_full",
+    "trainable_parameters": 510913,
+    "frozen_parameters": 302289,
+    "total_parameters": 813202,
+    "trainable_percentage": 62.82731719794098
+  },
+  {
+    "strategy": "full_finetune",
+    "requested_layers": "__ALL__",
+    "actual_trainable_layers": "encoder_conv_1; encoder_conv_2; encoder_conv_3; encoder_conv_4; channel_est_conv_1; channel_est_conv_2; channel_est_conv_3; channel_est_conv_4; channel_est_conv_5; channel_est_dense_1; estimated_channel; decoder_conv_1; decoder_res1_input; decoder_res1_conv1; decoder_res1_conv2; decoder_res2_input; decoder_res2_conv1; decoder_res2_conv2; decoder_conv_final; pred_logits_full",
+    "trainable_parameters": 813202,
+    "frozen_parameters": 0,
+    "total_parameters": 813202,
+    "trainable_percentage": 100.0
+  }
+]

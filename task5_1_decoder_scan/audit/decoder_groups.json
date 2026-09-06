@@ -1,0 +1,81 @@
+{
+  "decoder_groups": {
+    "decoder_input": [
+      "decoder_conv_1"
+    ],
+    "decoder_residual_1": [
+      "decoder_res1_input",
+      "decoder_res1_conv1",
+      "decoder_res1_conv2"
+    ],
+    "decoder_residual_2": [
+      "decoder_res2_input",
+      "decoder_res2_conv1",
+      "decoder_res2_conv2"
+    ],
+    "decoder_output_head": [
+      "decoder_conv_final",
+      "pred_logits_full"
+    ]
+  },
+  "all_decoder_parameter_layers": [
+    "decoder_conv_1",
+    "decoder_res1_input",
+    "decoder_res1_conv1",
+    "decoder_res1_conv2",
+    "decoder_res2_input",
+    "decoder_res2_conv1",
+    "decoder_res2_conv2",
+    "decoder_conv_final",
+    "pred_logits_full"
+  ],
+  "task5_1_strategies": {
+    "no_adaptation": [],
+    "decoder_input_only": [
+      "decoder_conv_1"
+    ],
+    "decoder_residual_1_only": [
+      "decoder_res1_input",
+      "decoder_res1_conv1",
+      "decoder_res1_conv2"
+    ],
+    "decoder_residual_2_only": [
+      "decoder_res2_input",
+      "decoder_res2_conv1",
+      "decoder_res2_conv2"
+    ],
+    "decoder_output_head_only": [
+      "decoder_conv_final",
+      "pred_logits_full"
+    ],
+    "decoder_input_plus_residual_1": [
+      "decoder_conv_1",
+      "decoder_res1_input",
+      "decoder_res1_conv1",
+      "decoder_res1_conv2"
+    ],
+    "decoder_input_plus_residual_1_plus_residual_2": [
+      "decoder_conv_1",
+      "decoder_res1_input",
+      "decoder_res1_conv1",
+      "decoder_res1_conv2",
+      "decoder_res2_input",
+      "decoder_res2_conv1",
+      "decoder_res2_conv2"
+    ],
+    "entire_decoder": [
+      "decoder_conv_1",
+      "decoder_res1_input",
+      "decoder_res1_conv1",
+      "decoder_res1_conv2",
+      "decoder_res2_input",
+      "decoder_res2_conv1",
+      "decoder_res2_conv2",
+      "decoder_conv_final",
+      "pred_logits_full"
+    ],
+    "full_finetune": [
+      "__ALL__"
+    ]
+  }
+}

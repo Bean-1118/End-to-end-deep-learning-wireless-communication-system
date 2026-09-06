@@ -1,0 +1,10 @@
+strategy,requested_layers,actual_trainable_layers,trainable_parameters,frozen_parameters,total_parameters,trainable_percentage
+no_adaptation,,,0,813202,813202,0.0
+decoder_input_only,decoder_conv_1,decoder_conv_1,102656,710546,813202,12.623677757801875
+decoder_residual_1_only,decoder_res1_input; decoder_res1_conv1; decoder_res1_conv2,decoder_res1_input; decoder_res1_conv1; decoder_res1_conv2,328064,485138,813202,40.34225198659128
+decoder_residual_2_only,decoder_res2_input; decoder_res2_conv1; decoder_res2_conv2,decoder_res2_input; decoder_res2_conv1; decoder_res2_conv2,73920,739282,813202,9.089992400412198
+decoder_output_head_only,decoder_conv_final; pred_logits_full,decoder_conv_final; pred_logits_full,6273,806929,813202,0.7713950531356293
+decoder_input_plus_residual_1,decoder_conv_1; decoder_res1_input; decoder_res1_conv1; decoder_res1_conv2,decoder_conv_1; decoder_res1_input; decoder_res1_conv1; decoder_res1_conv2,430720,382482,813202,52.96592974439315
+decoder_input_plus_residual_1_plus_residual_2,decoder_conv_1; decoder_res1_input; decoder_res1_conv1; decoder_res1_conv2; decoder_res2_input; decoder_res2_conv1; decoder_res2_conv2,decoder_conv_1; decoder_res1_input; decoder_res1_conv1; decoder_res1_conv2; decoder_res2_input; decoder_res2_conv1; decoder_res2_conv2,504640,308562,813202,62.05592214480535
+entire_decoder,decoder_conv_1; decoder_res1_input; decoder_res1_conv1; decoder_res1_conv2; decoder_res2_input; decoder_res2_conv1; decoder_res2_conv2; decoder_conv_final; pred_logits_full,decoder_conv_1; decoder_res1_input; decoder_res1_conv1; decoder_res1_conv2; decoder_res2_input; decoder_res2_conv1; decoder_res2_conv2; decoder_conv_final; pred_logits_full,510913,302289,813202,62.82731719794098
+full_finetune,__ALL__,encoder_conv_1; encoder_conv_2; encoder_conv_3; encoder_conv_4; channel_est_conv_1; channel_est_conv_2; channel_est_conv_3; channel_est_conv_4; channel_est_conv_5; channel_est_dense_1; estimated_channel; decoder_conv_1; decoder_res1_input; decoder_res1_conv1; decoder_res1_conv2; decoder_res2_input; decoder_res2_conv1; decoder_res2_conv2; decoder_conv_final; pred_logits_full,813202,0,813202,100.0
