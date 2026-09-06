@@ -1,0 +1,242 @@
+[
+  {
+    "index": 0,
+    "name": "encoder_conv_1/kernel",
+    "max_abs_change": 0.0,
+    "changed": false
+  },
+  {
+    "index": 1,
+    "name": "encoder_conv_1/bias",
+    "max_abs_change": 0.0,
+    "changed": false
+  },
+  {
+    "index": 2,
+    "name": "encoder_conv_2/kernel",
+    "max_abs_change": 0.0,
+    "changed": false
+  },
+  {
+    "index": 3,
+    "name": "encoder_conv_2/bias",
+    "max_abs_change": 0.0,
+    "changed": false
+  },
+  {
+    "index": 4,
+    "name": "encoder_conv_3/kernel",
+    "max_abs_change": 0.0,
+    "changed": false
+  },
+  {
+    "index": 5,
+    "name": "encoder_conv_3/bias",
+    "max_abs_change": 0.0,
+    "changed": false
+  },
+  {
+    "index": 6,
+    "name": "encoder_conv_4/kernel",
+    "max_abs_change": 0.0,
+    "changed": false
+  },
+  {
+    "index": 7,
+    "name": "encoder_conv_4/bias",
+    "max_abs_change": 0.0,
+    "changed": false
+  },
+  {
+    "index": 8,
+    "name": "channel_est_conv_1/kernel",
+    "max_abs_change": 0.0,
+    "changed": false
+  },
+  {
+    "index": 9,
+    "name": "channel_est_conv_1/bias",
+    "max_abs_change": 0.0,
+    "changed": false
+  },
+  {
+    "index": 10,
+    "name": "channel_est_conv_2/kernel",
+    "max_abs_change": 0.0,
+    "changed": false
+  },
+  {
+    "index": 11,
+    "name": "channel_est_conv_2/bias",
+    "max_abs_change": 0.0,
+    "changed": false
+  },
+  {
+    "index": 12,
+    "name": "channel_est_conv_3/kernel",
+    "max_abs_change": 0.0,
+    "changed": false
+  },
+  {
+    "index": 13,
+    "name": "channel_est_conv_3/bias",
+    "max_abs_change": 0.0,
+    "changed": false
+  },
+  {
+    "index": 14,
+    "name": "channel_est_conv_4/kernel",
+    "max_abs_change": 0.0,
+    "changed": false
+  },
+  {
+    "index": 15,
+    "name": "channel_est_conv_4/bias",
+    "max_abs_change": 0.0,
+    "changed": false
+  },
+  {
+    "index": 16,
+    "name": "channel_est_conv_5/kernel",
+    "max_abs_change": 0.0,
+    "changed": false
+  },
+  {
+    "index": 17,
+    "name": "channel_est_conv_5/bias",
+    "max_abs_change": 0.0,
+    "changed": false
+  },
+  {
+    "index": 18,
+    "name": "channel_est_dense_1/kernel",
+    "max_abs_change": 0.002061814069747925,
+    "changed": true
+  },
+  {
+    "index": 19,
+    "name": "channel_est_dense_1/bias",
+    "max_abs_change": 0.0019566211849451065,
+    "changed": true
+  },
+  {
+    "index": 20,
+    "name": "estimated_channel/kernel",
+    "max_abs_change": 0.002043299376964569,
+    "changed": true
+  },
+  {
+    "index": 21,
+    "name": "estimated_channel/bias",
+    "max_abs_change": 0.0019439887255430222,
+    "changed": true
+  },
+  {
+    "index": 22,
+    "name": "decoder_conv_1/kernel",
+    "max_abs_change": 0.0,
+    "changed": false
+  },
+  {
+    "index": 23,
+    "name": "decoder_conv_1/bias",
+    "max_abs_change": 0.0,
+    "changed": false
+  },
+  {
+    "index": 24,
+    "name": "decoder_res1_input/kernel",
+    "max_abs_change": 0.0,
+    "changed": false
+  },
+  {
+    "index": 25,
+    "name": "decoder_res1_input/bias",
+    "max_abs_change": 0.0,
+    "changed": false
+  },
+  {
+    "index": 26,
+    "name": "decoder_res1_conv1/kernel",
+    "max_abs_change": 0.0,
+    "changed": false
+  },
+  {
+    "index": 27,
+    "name": "decoder_res1_conv1/bias",
+    "max_abs_change": 0.0,
+    "changed": false
+  },
+  {
+    "index": 28,
+    "name": "decoder_res1_conv2/kernel",
+    "max_abs_change": 0.0,
+    "changed": false
+  },
+  {
+    "index": 29,
+    "name": "decoder_res1_conv2/bias",
+    "max_abs_change": 0.0,
+    "changed": false
+  },
+  {
+    "index": 30,
+    "name": "decoder_res2_input/kernel",
+    "max_abs_change": 0.0,
+    "changed": false
+  },
+  {
+    "index": 31,
+    "name": "decoder_res2_input/bias",
+    "max_abs_change": 0.0,
+    "changed": false
+  },
+  {
+    "index": 32,
+    "name": "decoder_res2_conv1/kernel",
+    "max_abs_change": 0.0,
+    "changed": false
+  },
+  {
+    "index": 33,
+    "name": "decoder_res2_conv1/bias",
+    "max_abs_change": 0.0,
+    "changed": false
+  },
+  {
+    "index": 34,
+    "name": "decoder_res2_conv2/kernel",
+    "max_abs_change": 0.0,
+    "changed": false
+  },
+  {
+    "index": 35,
+    "name": "decoder_res2_conv2/bias",
+    "max_abs_change": 0.0,
+    "changed": false
+  },
+  {
+    "index": 36,
+    "name": "decoder_conv_final/kernel",
+    "max_abs_change": 0.0,
+    "changed": false
+  },
+  {
+    "index": 37,
+    "name": "decoder_conv_final/bias",
+    "max_abs_change": 0.0,
+    "changed": false
+  },
+  {
+    "index": 38,
+    "name": "pred_logits_full/kernel",
+    "max_abs_change": 0.0,
+    "changed": false
+  },
+  {
+    "index": 39,
+    "name": "pred_logits_full/bias",
+    "max_abs_change": 0.0,
+    "changed": false
+  }
+]

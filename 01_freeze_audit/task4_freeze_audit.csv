@@ -1,0 +1,9 @@
+strategy,requested_layers,actual_trainable_layers,trainable_parameters,frozen_parameters,total_parameters,trainable_percentage
+no_adaptation,,,0,813202,813202,0.0
+dense_head,channel_est_dense_1; estimated_channel,channel_est_dense_1; estimated_channel,44940,768262,813202,5.52630219797787
+channel_extractor,channel_est_conv_1; channel_est_conv_2; channel_est_conv_3; channel_est_conv_4; channel_est_conv_5; channel_est_dense_1; estimated_channel,channel_est_conv_1; channel_est_conv_2; channel_est_conv_3; channel_est_conv_4; channel_est_conv_5; channel_est_dense_1; estimated_channel,177295,635907,813202,21.802086074554662
+decoder_conv1,decoder_conv_1,decoder_conv_1,102656,710546,813202,12.623677757801875
+full_finetune,__ALL__,encoder_conv_1; encoder_conv_2; encoder_conv_3; encoder_conv_4; channel_est_conv_1; channel_est_conv_2; channel_est_conv_3; channel_est_conv_4; channel_est_conv_5; channel_est_dense_1; estimated_channel; decoder_conv_1; decoder_res1_input; decoder_res1_conv1; decoder_res1_conv2; decoder_res2_input; decoder_res2_conv1; decoder_res2_conv2; decoder_conv_final; pred_logits_full,813202,0,813202,100.0
+channel_conv_backbone,channel_est_conv_1; channel_est_conv_2; channel_est_conv_3; channel_est_conv_4; channel_est_conv_5,channel_est_conv_1; channel_est_conv_2; channel_est_conv_3; channel_est_conv_4; channel_est_conv_5,132355,680847,813202,16.275783876576792
+encoder_output,encoder_conv_4,encoder_conv_4,386,812816,813202,0.04746668109522603
+final_decision_head,decoder_conv_final; pred_logits_full,decoder_conv_final; pred_logits_full,6273,806929,813202,0.7713950531356293

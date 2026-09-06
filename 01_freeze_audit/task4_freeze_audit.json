@@ -1,0 +1,145 @@
+[
+  {
+    "strategy": "no_adaptation",
+    "requested_layers": [],
+    "actual_trainable_layers": [],
+    "trainable_parameters": 0,
+    "frozen_parameters": 813202,
+    "total_parameters": 813202,
+    "trainable_percentage": 0.0
+  },
+  {
+    "strategy": "dense_head",
+    "requested_layers": [
+      "channel_est_dense_1",
+      "estimated_channel"
+    ],
+    "actual_trainable_layers": [
+      "channel_est_dense_1",
+      "estimated_channel"
+    ],
+    "trainable_parameters": 44940,
+    "frozen_parameters": 768262,
+    "total_parameters": 813202,
+    "trainable_percentage": 5.52630219797787
+  },
+  {
+    "strategy": "channel_extractor",
+    "requested_layers": [
+      "channel_est_conv_1",
+      "channel_est_conv_2",
+      "channel_est_conv_3",
+      "channel_est_conv_4",
+      "channel_est_conv_5",
+      "channel_est_dense_1",
+      "estimated_channel"
+    ],
+    "actual_trainable_layers": [
+      "channel_est_conv_1",
+      "channel_est_conv_2",
+      "channel_est_conv_3",
+      "channel_est_conv_4",
+      "channel_est_conv_5",
+      "channel_est_dense_1",
+      "estimated_channel"
+    ],
+    "trainable_parameters": 177295,
+    "frozen_parameters": 635907,
+    "total_parameters": 813202,
+    "trainable_percentage": 21.802086074554662
+  },
+  {
+    "strategy": "decoder_conv1",
+    "requested_layers": [
+      "decoder_conv_1"
+    ],
+    "actual_trainable_layers": [
+      "decoder_conv_1"
+    ],
+    "trainable_parameters": 102656,
+    "frozen_parameters": 710546,
+    "total_parameters": 813202,
+    "trainable_percentage": 12.623677757801875
+  },
+  {
+    "strategy": "full_finetune",
+    "requested_layers": [
+      "__ALL__"
+    ],
+    "actual_trainable_layers": [
+      "encoder_conv_1",
+      "encoder_conv_2",
+      "encoder_conv_3",
+      "encoder_conv_4",
+      "channel_est_conv_1",
+      "channel_est_conv_2",
+      "channel_est_conv_3",
+      "channel_est_conv_4",
+      "channel_est_conv_5",
+      "channel_est_dense_1",
+      "estimated_channel",
+      "decoder_conv_1",
+      "decoder_res1_input",
+      "decoder_res1_conv1",
+      "decoder_res1_conv2",
+      "decoder_res2_input",
+      "decoder_res2_conv1",
+      "decoder_res2_conv2",
+      "decoder_conv_final",
+      "pred_logits_full"
+    ],
+    "trainable_parameters": 813202,
+    "frozen_parameters": 0,
+    "total_parameters": 813202,
+    "trainable_percentage": 100.0
+  },
+  {
+    "strategy": "channel_conv_backbone",
+    "requested_layers": [
+      "channel_est_conv_1",
+      "channel_est_conv_2",
+      "channel_est_conv_3",
+      "channel_est_conv_4",
+      "channel_est_conv_5"
+    ],
+    "actual_trainable_layers": [
+      "channel_est_conv_1",
+      "channel_est_conv_2",
+      "channel_est_conv_3",
+      "channel_est_conv_4",
+      "channel_est_conv_5"
+    ],
+    "trainable_parameters": 132355,
+    "frozen_parameters": 680847,
+    "total_parameters": 813202,
+    "trainable_percentage": 16.275783876576792
+  },
+  {
+    "strategy": "encoder_output",
+    "requested_layers": [
+      "encoder_conv_4"
+    ],
+    "actual_trainable_layers": [
+      "encoder_conv_4"
+    ],
+    "trainable_parameters": 386,
+    "frozen_parameters": 812816,
+    "total_parameters": 813202,
+    "trainable_percentage": 0.04746668109522603
+  },
+  {
+    "strategy": "final_decision_head",
+    "requested_layers": [
+      "decoder_conv_final",
+      "pred_logits_full"
+    ],
+    "actual_trainable_layers": [
+      "decoder_conv_final",
+      "pred_logits_full"
+    ],
+    "trainable_parameters": 6273,
+    "frozen_parameters": 806929,
+    "total_parameters": 813202,
+    "trainable_percentage": 0.7713950531356293
+  }
+]
