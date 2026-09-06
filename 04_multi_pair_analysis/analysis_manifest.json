@@ -1,0 +1,12 @@
+{
+  "ber_matrix": "/mnt/d/IC/project/code/wireless_pdp_project/outputs/results/ber_matrix.csv",
+  "num_pairs": 3,
+  "pairs": [
+    "PDP0_to_PDP2",
+    "PDP0_to_PDP4",
+    "PDP1_to_PDP4"
+  ],
+  "output_dir": "/mnt/d/IC/project/code/wireless_pdp_project/outputs/task4_adaptation/04_multi_pair_analysis",
+  "best_mean_target_ber_strategy": "full_finetune",
+  "best_partial_strategy": "decoder_conv1"
+}

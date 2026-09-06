@@ -1,0 +1,16 @@
+{
+  "input": "/mnt/d/IC/project/code/wireless_pdp_project/outputs/task4_adaptation/04_multi_pair_analysis/combined_pair_strategy_results.csv",
+  "num_pairs": 3,
+  "num_strategies": 6,
+  "outputs": [
+    "pair_level_ranked_results.csv",
+    "cross_pair_statistical_summary.csv",
+    "transfer_strategy_summary.csv",
+    "partial_strategy_ranking.csv",
+    "average_target_ber_rank.png",
+    "mean_oracle_recovery.png",
+    "mean_source_forgetting.png",
+    "summary_recovery_forgetting_tradeoff.png",
+    "TASK4_5_STATISTICAL_SUMMARY.md"
+  ]
+}
