@@ -1,0 +1,65 @@
+[
+  {
+    "functional_module": "Decoder / Data recovery",
+    "layer_count": 9,
+    "parameterised_layer_count": 9,
+    "total_params": 510913,
+    "trainable_params": 510913,
+    "non_trainable_params": 0,
+    "percentage_of_model_params": 62.82731719794098
+  },
+  {
+    "functional_module": "Channel feature extractor",
+    "layer_count": 7,
+    "parameterised_layer_count": 7,
+    "total_params": 177295,
+    "trainable_params": 177295,
+    "non_trainable_params": 0,
+    "percentage_of_model_params": 21.802086074554662
+  },
+  {
+    "functional_module": "Encoder / Transmitter",
+    "layer_count": 4,
+    "parameterised_layer_count": 4,
+    "total_params": 124994,
+    "trainable_params": 124994,
+    "non_trainable_params": 0,
+    "percentage_of_model_params": 15.37059672750436
+  },
+  {
+    "functional_module": "Model interface",
+    "layer_count": 3,
+    "parameterised_layer_count": 0,
+    "total_params": 0,
+    "trainable_params": 0,
+    "non_trainable_params": 0,
+    "percentage_of_model_params": 0.0
+  },
+  {
+    "functional_module": "TensorFlow operation",
+    "layer_count": 7,
+    "parameterised_layer_count": 0,
+    "total_params": 0,
+    "trainable_params": 0,
+    "non_trainable_params": 0,
+    "percentage_of_model_params": 0.0
+  },
+  {
+    "functional_module": "Bilinear fusion",
+    "layer_count": 1,
+    "parameterised_layer_count": 0,
+    "total_params": 0,
+    "trainable_params": 0,
+    "non_trainable_params": 0,
+    "percentage_of_model_params": 0.0
+  },
+  {
+    "functional_module": "Residual / arithmetic operation",
+    "layer_count": 2,
+    "parameterised_layer_count": 0,
+    "total_params": 0,
+    "trainable_params": 0,
+    "non_trainable_params": 0,
+    "percentage_of_model_params": 0.0
+  }
+]

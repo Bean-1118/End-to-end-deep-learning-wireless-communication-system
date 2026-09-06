@@ -1,0 +1,93 @@
+Task 3: Shared / Particular Candidate Splits
+================================================
+
+Important interpretation
+------------------------
+The following are hypotheses for Task 2 experiments, not final conclusions.
+A layer is not classified as particular merely because it is near the output.
+The functional dependence on the PDP and the number of adaptation parameters
+must both be considered.
+
+Candidate A — Functional module split
+-------------------------------------
+Shared:
+- Encoder / transmitter
+- Decoder / data-recovery network
+
+Particular:
+- Entire channel feature extractor
+
+Research rationale:
+The channel feature extractor directly maps noisy received samples into a
+global latent channel representation, so it is the strongest PDP-specific
+candidate.
+
+Risk:
+The whole extractor may contain too many parameters for stable few-shot
+adaptation, and its early convolutions may still learn reusable channel
+observation features.
+
+
+Candidate B — Channel-feature head split
+----------------------------------------
+Shared:
+- Encoder / transmitter
+- Channel-extractor convolutional backbone
+- Decoder / data-recovery network
+
+Particular:
+- Channel-extractor Dense bottleneck
+- Final 40-dimensional estimated-channel feature layer
+
+Research rationale:
+The convolutional part may learn general ways of detecting multipath/channel
+patterns, while the Dense head may encode how these observations are mapped
+into a representation suited to one PDP family.
+
+Expected advantage:
+Far fewer adaptation parameters than retraining the complete extractor.
+
+
+Candidate C — Shared backbone plus lightweight adapters
+-------------------------------------------------------
+Shared:
+- Existing encoder, channel extractor and decoder backbone
+
+Particular:
+- Newly added small scale/shift parameters or adapter layers
+
+Research rationale:
+This is closest to the few-shot shared/particular framework. The main network
+retains transferable communication knowledge, while a small environment-
+specific parameter set adapts to the target PDP.
+
+Risk:
+It requires an architectural change and should normally be attempted only
+after Candidates A and B establish where mismatch-sensitive representations
+are concentrated.
+
+
+Suggested Task 2 controls
+-------------------------
+For the same source model and target PDP, compare:
+1. No adaptation.
+2. Fine-tune channel-feature Dense head only.
+3. Fine-tune entire channel feature extractor.
+4. Fine-tune decoder only.
+5. Fine-tune all trainable layers.
+6. Train from scratch on the target PDP as an upper-reference baseline.
+
+Keep constant:
+- Target adaptation sample count.
+- Optimiser and learning-rate policy.
+- Number of adaptation updates.
+- Test PDP and independent channel realisations.
+- SNR evaluation grid.
+- Random seeds or repeated-run protocol.
+
+Primary evidence:
+- Target BER after adaptation.
+- Number and percentage of updated parameters.
+- Adaptation sample count.
+- Convergence speed.
+- Mean and standard deviation across repeated runs.

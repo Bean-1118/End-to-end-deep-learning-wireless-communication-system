@@ -1,0 +1,34 @@
+﻿index,layer_name,layer_type,input_shape,output_shape,total_params,trainable_params,non_trainable_params,layer_trainable_flag,functional_module,interpreted_role,shared_particular_hypothesis
+0,input_bits,InputLayer,,"(None, 128, 1)",0,0,0,True,Model interface,External model input,Not classified
+1,encoder_conv_1,Conv1D,"(None, 128, 1)","(None, 128, 256)",1536,1536,0,True,Encoder / Transmitter,Encoder Conv1D #1,Shared-leaning
+2,encoder_conv_2,Conv1D,"(None, 128, 256)","(None, 128, 128)",98432,98432,0,True,Encoder / Transmitter,Encoder Conv1D #2,Shared-leaning
+3,encoder_conv_3,Conv1D,"(None, 128, 128)","(None, 128, 64)",24640,24640,0,True,Encoder / Transmitter,Encoder Conv1D #3,Shared-leaning
+4,encoder_conv_4,Conv1D,"(None, 128, 64)","(None, 128, 2)",386,386,0,True,Encoder / Transmitter,Encoder Conv1D #4,Uncertain: transmitted waveform may adapt to PDP
+5,input_channel,InputLayer,,"(None, 8, 2)",0,0,0,True,Model interface,External model input,Not classified
+6,input_noise_std,InputLayer,,"(None, 1)",0,0,0,True,Model interface,External model input,Not classified
+7,wireless_channel,WirelessChannelLayer,"(None, 128, 2) | (None, 8, 2) | (None, 1)","(None, 136, 2)",0,0,0,True,TensorFlow operation,WirelessChannelLayer,No direct shared/particular parameter classification
+8,channel_est_conv_1,Conv1D,"(None, 136, 2)","(None, 136, 256)",2816,2816,0,True,Channel feature extractor,Channel-extractor Conv1D #1,Particular-leaning: directly processes received channel observations
+9,channel_est_conv_2,Conv1D,"(None, 136, 256)","(None, 136, 128)",98432,98432,0,True,Channel feature extractor,Channel-extractor Conv1D #2,Particular-leaning: directly processes received channel observations
+10,channel_est_conv_3,Conv1D,"(None, 136, 128)","(None, 136, 64)",24640,24640,0,True,Channel feature extractor,Channel-extractor Conv1D #3,Particular-leaning: directly processes received channel observations
+11,channel_est_conv_4,Conv1D,"(None, 136, 64)","(None, 136, 32)",6176,6176,0,True,Channel feature extractor,Channel-extractor Conv1D #4,Particular-leaning: directly processes received channel observations
+12,channel_est_conv_5,Conv1D,"(None, 136, 32)","(None, 136, 3)",291,291,0,True,Channel feature extractor,Channel-extractor Conv1D #5,Particular-leaning: directly processes received channel observations
+13,channel_est_flatten,Reshape,"(None, 136, 3)","(None, 408)",0,0,0,True,TensorFlow operation,Reshape,No direct shared/particular parameter classification
+14,channel_est_dense_1,Dense,"(None, 408)","(None, 100)",40900,40900,0,True,Channel feature extractor,Channel feature bottleneck Dense,Strong particular candidate: maps observations into environment-sensitive channel representation
+15,estimated_channel,Dense,"(None, 100)","(None, 40)",4040,4040,0,True,Channel feature extractor,40-D estimated-channel feature output,Strong particular candidate: maps observations into environment-sensitive channel representation
+16,bilinear_multiplication,BilinearMulLayer,"(None, 136, 2) | (None, 40)","(None, 136, 80)",0,0,0,True,Bilinear fusion,Combines received samples with global channel feature,No trainable parameters
+17,decoder_conv_1,Conv1D,"(None, 136, 80)","(None, 136, 256)",102656,102656,0,True,Decoder / Data recovery,Decoder Conv1D #1,Uncertain: directly interprets channel-conditioned bilinear features
+18,decoder_res1_input,Conv1D,"(None, 136, 256)","(None, 136, 128)",163968,163968,0,True,Decoder / Data recovery,Decoder Conv1D #2,Mixed: general recovery plus possible PDP-dependent equalisation
+19,decoder_res1_conv1,Conv1D,"(None, 136, 128)","(None, 136, 128)",82048,82048,0,True,Decoder / Data recovery,Decoder Conv1D #3,Mixed: general recovery plus possible PDP-dependent equalisation
+20,decoder_res1_conv2,Conv1D,"(None, 136, 128)","(None, 136, 128)",82048,82048,0,True,Decoder / Data recovery,Decoder Conv1D #4,Mixed: general recovery plus possible PDP-dependent equalisation
+21,decoder_res1_add,Add,"(None, 136, 128) | (None, 136, 128)","(None, 136, 128)",0,0,0,True,Residual / arithmetic operation,Residual connection or channel arithmetic,No trainable parameters
+22,decoder_res1_relu,Activation,"(None, 136, 128)","(None, 136, 128)",0,0,0,True,TensorFlow operation,Activation,No direct shared/particular parameter classification
+23,decoder_res2_input,Conv1D,"(None, 136, 128)","(None, 136, 64)",41024,41024,0,True,Decoder / Data recovery,Decoder Conv1D #5,Mixed: general recovery plus possible PDP-dependent equalisation
+24,decoder_res2_conv1,Conv1D,"(None, 136, 64)","(None, 136, 64)",20544,20544,0,True,Decoder / Data recovery,Decoder Conv1D #6,Mixed: general recovery plus possible PDP-dependent equalisation
+25,decoder_res2_conv2,Conv1D,"(None, 136, 64)","(None, 136, 64)",12352,12352,0,True,Decoder / Data recovery,Decoder Conv1D #7,Mixed: general recovery plus possible PDP-dependent equalisation
+26,decoder_res2_add,Add,"(None, 136, 64) | (None, 136, 64)","(None, 136, 64)",0,0,0,True,Residual / arithmetic operation,Residual connection or channel arithmetic,No trainable parameters
+27,decoder_res2_relu,Activation,"(None, 136, 64)","(None, 136, 64)",0,0,0,True,TensorFlow operation,Activation,No direct shared/particular parameter classification
+28,decoder_conv_final,Conv1D,"(None, 136, 64)","(None, 136, 32)",6176,6176,0,True,Decoder / Data recovery,Decoder Conv1D #8,Shared-leaning: final bit reconstruction/decision
+29,pred_logits_full,Conv1D,"(None, 136, 32)","(None, 136, 1)",97,97,0,True,Decoder / Data recovery,Decoder Conv1D #9,Shared-leaning: final bit reconstruction/decision
+30,pred_prob_full,Activation,"(None, 136, 1)","(None, 136, 1)",0,0,0,True,TensorFlow operation,Activation,No direct shared/particular parameter classification
+31,pred_logits,Cropping1D,"(None, 136, 1)","(None, 128, 1)",0,0,0,True,TensorFlow operation,Cropping1D,No direct shared/particular parameter classification
+32,pred_prob,Cropping1D,"(None, 136, 1)","(None, 128, 1)",0,0,0,True,TensorFlow operation,Cropping1D,No direct shared/particular parameter classification

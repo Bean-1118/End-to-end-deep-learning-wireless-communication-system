@@ -1,0 +1,8 @@
+﻿functional_module,layer_count,parameterised_layer_count,total_params,trainable_params,non_trainable_params,percentage_of_model_params
+Decoder / Data recovery,9,9,510913,510913,0,62.82731719794098
+Channel feature extractor,7,7,177295,177295,0,21.802086074554662
+Encoder / Transmitter,4,4,124994,124994,0,15.37059672750436
+Model interface,3,0,0,0,0,0.0
+TensorFlow operation,7,0,0,0,0,0.0
+Bilinear fusion,1,0,0,0,0,0.0
+Residual / arithmetic operation,2,0,0,0,0,0.0

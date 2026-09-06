@@ -1,0 +1,107 @@
+Task 3 — Parameter Sensitivity Ranking
+======================================
+
+Interpretation
+--------------
+This is an architecture-based adaptation-priority hypothesis, not an
+empirically measured sensitivity result. The ranking is intended to
+decide which parameter subsets should be tested first in the next
+cross-PDP freezing/fine-tuning experiment.
+
+Scoring
+-------
+Priority = 0.50 × PDP dependence + 0.30 × parameter efficiency
+         + 0.20 × proximity to the latent channel representation.
+
+Rank 1: Channel extractor Dense head
+-------------------------------------
+Layers: channel_est_dense_1, estimated_channel
+Parameters: 44,940 (5.53% of model)
+PDP dependence: 5/5
+Parameter efficiency: 5/5
+Representation proximity: 5/5
+Priority score: 5.00/5 (Very high)
+Rationale: Directly maps the extracted received-signal features into the 40-dimensional latent channel representation; strongest environment-specific candidate.
+Recommended experiment: First adaptation experiment: freeze all other layers and fine-tune channel_est_dense_1 + estimated_channel.
+Evidence status: Architecture-based hypothesis; requires empirical cross-PDP freezing/fine-tuning validation
+
+Rank 2: Decoder early channel-conditioned layer
+------------------------------------------------
+Layers: decoder_conv_1
+Parameters: 102,656 (12.62% of model)
+PDP dependence: 4/5
+Parameter efficiency: 4/5
+Representation proximity: 4/5
+Priority score: 4.00/5 (High)
+Rationale: Immediately consumes the bilinear combination of received samples and estimated channel features, so it may be sensitive to a mismatched channel representation.
+Recommended experiment: Fine-tune decoder_conv_1 alone after the channel-head tests.
+Evidence status: Architecture-based hypothesis; requires empirical cross-PDP freezing/fine-tuning validation
+
+Rank 3: Channel extractor convolutional backbone
+-------------------------------------------------
+Layers: channel_est_conv_1, channel_est_conv_2, channel_est_conv_3, channel_est_conv_4, channel_est_conv_5
+Parameters: 132,355 (16.28% of model)
+PDP dependence: 4/5
+Parameter efficiency: 3/5
+Representation proximity: 4/5
+Priority score: 3.70/5 (Medium)
+Rationale: Directly processes the noisy channel output and likely captures multipath patterns, although early convolutional features may remain transferable across PDPs.
+Recommended experiment: Compare against Dense-head-only adaptation to test whether early channel-observation features also require updating.
+Evidence status: Architecture-based hypothesis; requires empirical cross-PDP freezing/fine-tuning validation
+
+Rank 4: Encoder waveform output
+--------------------------------
+Layers: encoder_conv_4
+Parameters: 386 (0.05% of model)
+PDP dependence: 3/5
+Parameter efficiency: 5/5
+Representation proximity: 2/5
+Priority score: 3.40/5 (Medium)
+Rationale: Produces the two-channel transmitted waveform. It may adapt to the training PDP, but contains very few parameters.
+Recommended experiment: Optional small-parameter ablation: adapt encoder_conv_4 only.
+Evidence status: Architecture-based hypothesis; requires empirical cross-PDP freezing/fine-tuning validation
+
+Rank 5: Decoder final decision head
+------------------------------------
+Layers: decoder_conv_final, pred_logits_full
+Parameters: 6,273 (0.77% of model)
+PDP dependence: 2/5
+Parameter efficiency: 5/5
+Representation proximity: 2/5
+Priority score: 2.90/5 (Low)
+Rationale: Maps recovered features to bit logits. It is close to the output but not necessarily close to PDP-specific channel statistics.
+Recommended experiment: Low-cost control experiment: adapt final decision head only.
+Evidence status: Architecture-based hypothesis; requires empirical cross-PDP freezing/fine-tuning validation
+
+Rank 6: Decoder residual recovery backbone
+-------------------------------------------
+Layers: decoder_res1_conv1, decoder_res1_conv2, decoder_res1_input, decoder_res2_conv1, decoder_res2_conv2, decoder_res2_input
+Parameters: 401,984 (49.43% of model)
+PDP dependence: 3/5
+Parameter efficiency: 1/5
+Representation proximity: 3/5
+Priority score: 2.40/5 (Low)
+Rationale: Performs most of the nonlinear signal recovery. It may combine general decoding knowledge with PDP-dependent equalisation, but contains a large fraction of the total parameters.
+Recommended experiment: Use as a later comparison, not the first few-shot candidate, because of its high parameter cost.
+Evidence status: Architecture-based hypothesis; requires empirical cross-PDP freezing/fine-tuning validation
+
+Rank 7: Encoder early backbone
+-------------------------------
+Layers: encoder_conv_1, encoder_conv_2, encoder_conv_3
+Parameters: 124,608 (15.32% of model)
+PDP dependence: 2/5
+Parameter efficiency: 3/5
+Representation proximity: 1/5
+Priority score: 2.10/5 (Low)
+Rationale: Primarily forms a general bit-to-waveform representation and is far from the target channel representation.
+Recommended experiment: Keep frozen in initial transfer experiments; test only as part of full-model fine-tuning.
+Evidence status: Architecture-based hypothesis; requires empirical cross-PDP freezing/fine-tuning validation
+
+Recommended experimental order
+------------------------------
+1. Channel extractor Dense head only.
+2. Entire channel feature extractor.
+3. Decoder early channel-conditioned layer.
+4. Final decision head and encoder waveform output as lightweight controls.
+5. Decoder recovery backbone.
+6. Full-model fine-tuning and target-PDP training from scratch as references.
