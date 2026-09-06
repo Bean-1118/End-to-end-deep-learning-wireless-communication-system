@@ -1,0 +1,68 @@
+[
+  {
+    "strategy": "channel_extractor",
+    "num_seeds": 3,
+    "trainable_parameters": 177295,
+    "mean_target_ber_after": 0.28111445109049477,
+    "std_target_ber_after": 0.0011769019265522765,
+    "mean_target_improvement": 0.037881571451822936,
+    "std_target_improvement": 0.0005352227571097241,
+    "mean_source_ber_change": 0.05831873575846354,
+    "std_source_ber_change": 0.003528168132087605
+  },
+  {
+    "strategy": "decoder_conv1",
+    "num_seeds": 3,
+    "trainable_parameters": 102656,
+    "mean_target_ber_after": 0.24456832885742188,
+    "std_target_ber_after": 0.0006590482969379168,
+    "mean_target_improvement": 0.07442769368489584,
+    "std_target_improvement": 0.00031645199411666413,
+    "mean_source_ber_change": 0.05711736043294271,
+    "std_source_ber_change": 0.0008167378749849891
+  },
+  {
+    "strategy": "dense_head",
+    "num_seeds": 3,
+    "trainable_parameters": 44940,
+    "mean_target_ber_after": 0.29842829386393227,
+    "std_target_ber_after": 0.00046784993357864695,
+    "mean_target_improvement": 0.020567728678385428,
+    "std_target_improvement": 0.00025580732226198184,
+    "mean_source_ber_change": 0.041038106282552084,
+    "std_source_ber_change": 0.00023441693473882032
+  },
+  {
+    "strategy": "full_finetune",
+    "num_seeds": 3,
+    "trainable_parameters": 813202,
+    "mean_target_ber_after": 0.17682993570963543,
+    "std_target_ber_after": 0.0015848781241270407,
+    "mean_target_improvement": 0.1421660868326823,
+    "std_target_improvement": 0.002067363153816748,
+    "mean_source_ber_change": 0.1856389872233073,
+    "std_source_ber_change": 0.008118305486381584
+  },
+  {
+    "strategy": "no_adaptation",
+    "num_seeds": 3,
+    "trainable_parameters": 0,
+    "mean_target_ber_after": 0.31899602254231774,
+    "std_target_ber_after": 0.000656526955800737,
+    "mean_target_improvement": 0.0,
+    "std_target_improvement": 0.0,
+    "mean_source_ber_change": 0.0,
+    "std_source_ber_change": 0.0
+  },
+  {
+    "strategy": "scratch",
+    "num_seeds": 3,
+    "trainable_parameters": 813202,
+    "mean_target_ber_after": 0.30358896891276044,
+    "std_target_ber_after": 0.004756835648650165,
+    "mean_target_improvement": 0.1963831075032552,
+    "std_target_improvement": 0.005030879874151507,
+    "mean_source_ber_change": -0.011971486409505202,
+    "std_source_ber_change": 0.0038178328858863315
+  }
+]
