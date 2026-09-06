@@ -1,0 +1,20 @@
+{
+  "source_pdp": 0,
+  "target_pdp": 4,
+  "strategies": [
+    "no_adaptation",
+    "dense_head",
+    "full_finetune",
+    "scratch"
+  ],
+  "seeds": [
+    2026
+  ],
+  "adaptation_blocks": 2048,
+  "epochs": 2,
+  "learning_rate": 0.0001,
+  "ebno_linear": 20.0,
+  "test_batches": 10,
+  "checkpoint_root": "/mnt/d/IC/project/code/wireless_pdp_project/outputs/checkpoints",
+  "output_root": "/mnt/d/IC/project/code/wireless_pdp_project/outputs/task4_adaptation/03_main_experiment"
+}
