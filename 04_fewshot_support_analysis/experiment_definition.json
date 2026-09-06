@@ -1,0 +1,32 @@
+{
+  "purpose": "Study how unseen-environment target-support sample quantity affects Baseline 2 and Algorithm-1 transfer.",
+  "support_sizes": [
+    64,
+    128,
+    256
+  ],
+  "few_shot_support_generation": "local deterministic constructor matching the existing fixed-adaptation generator; supports N < 512 without modifying any earlier project code",
+  "seeds": [
+    2026,
+    2027,
+    2028
+  ],
+  "reuse_existing_root": "outputs/task7/04_support_size_analysis",
+  "targets": [
+    6,
+    7
+  ],
+  "epochs": 20,
+  "optimizer": "plain SGD",
+  "learning_rate": 0.01,
+  "query_blocks": 8192,
+  "fairness_controls": [
+    "same support seed for both methods",
+    "same support size",
+    "same adaptation epochs",
+    "same SGD learning rate",
+    "same particular-only trainable subset",
+    "same query generator and SNR sweep",
+    "Baseline 1 is reused and has support_size=0"
+  ]
+}

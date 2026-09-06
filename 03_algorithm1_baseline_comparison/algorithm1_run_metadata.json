@@ -1,0 +1,41 @@
+[
+  {
+    "seed": 2026,
+    "rho": 1200.0,
+    "sigma": 20.0,
+    "iterations_requested": 5000,
+    "best_iteration": 5000,
+    "best_mean_validation_ber": 0.09046236673990886,
+    "particular_initialisation": "historical_mean",
+    "adaptation_optimizer": "SGD",
+    "adaptation_blocks": 2048,
+    "adaptation_epochs": 20,
+    "adaptation_learning_rate": 0.01
+  },
+  {
+    "seed": 2027,
+    "rho": 1200.0,
+    "sigma": 20.0,
+    "iterations_requested": 5000,
+    "best_iteration": 5000,
+    "best_mean_validation_ber": 0.08826510111490886,
+    "particular_initialisation": "historical_mean",
+    "adaptation_optimizer": "SGD",
+    "adaptation_blocks": 2048,
+    "adaptation_epochs": 20,
+    "adaptation_learning_rate": 0.01
+  },
+  {
+    "seed": 2028,
+    "rho": 1200.0,
+    "sigma": 20.0,
+    "iterations_requested": 5000,
+    "best_iteration": 5000,
+    "best_mean_validation_ber": 0.08880043029785156,
+    "particular_initialisation": "historical_mean",
+    "adaptation_optimizer": "SGD",
+    "adaptation_blocks": 2048,
+    "adaptation_epochs": 20,
+    "adaptation_learning_rate": 0.01
+  }
+]
