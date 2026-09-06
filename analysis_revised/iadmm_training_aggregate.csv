@@ -1,0 +1,2 @@
+seed_count,rho,sigma,mean_best_validation_ber,std_best_validation_ber,mean_best_worst_pdp_ber,mean_best_relative_primal_residual,mean_best_relative_dual_residual,mean_best_iteration
+3,1200.0,20.0,0.08917596605088977,0.0009355085544091815,0.10914421081542969,3.2688043617134924e-05,2.4356610920154653e-05,5000.0
