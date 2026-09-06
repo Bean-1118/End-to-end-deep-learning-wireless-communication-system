@@ -1,0 +1,68 @@
+[
+  {
+    "strategy": "channel_extractor",
+    "num_seeds": 3,
+    "trainable_parameters": 177295,
+    "mean_target_ber_after": 0.14601064046223958,
+    "std_target_ber_after": 0.0005087467076518602,
+    "mean_target_improvement": 0.01254714965820313,
+    "std_target_improvement": 0.00011856903872282858,
+    "mean_source_ber_change": 0.00797800699869792,
+    "std_source_ber_change": 0.0005119262179494016
+  },
+  {
+    "strategy": "decoder_conv1",
+    "num_seeds": 3,
+    "trainable_parameters": 102656,
+    "mean_target_ber_after": 0.1338201395670573,
+    "std_target_ber_after": 0.0003517349248603158,
+    "mean_target_improvement": 0.02473765055338541,
+    "std_target_improvement": 9.971899813263997e-05,
+    "mean_source_ber_change": 0.009025268554687499,
+    "std_source_ber_change": 0.00018118853091917002
+  },
+  {
+    "strategy": "dense_head",
+    "num_seeds": 3,
+    "trainable_parameters": 44940,
+    "mean_target_ber_after": 0.15161315917968748,
+    "std_target_ber_after": 0.0002779358584348167,
+    "mean_target_improvement": 0.006944630940755213,
+    "std_target_improvement": 0.0001736150044097457,
+    "mean_source_ber_change": 0.00526372273763021,
+    "std_source_ber_change": 9.98727473708952e-05
+  },
+  {
+    "strategy": "full_finetune",
+    "num_seeds": 3,
+    "trainable_parameters": 813202,
+    "mean_target_ber_after": 0.12385894775390625,
+    "std_target_ber_after": 0.0003621322794854294,
+    "mean_target_improvement": 0.034698842366536455,
+    "std_target_improvement": 0.0006449333716214506,
+    "mean_source_ber_change": 0.012494862874348964,
+    "std_source_ber_change": 0.0002629194443887004
+  },
+  {
+    "strategy": "no_adaptation",
+    "num_seeds": 3,
+    "trainable_parameters": 0,
+    "mean_target_ber_after": 0.15855779012044272,
+    "std_target_ber_after": 0.00042354092484454256,
+    "mean_target_improvement": 0.0,
+    "std_target_improvement": 0.0,
+    "mean_source_ber_change": 0.0,
+    "std_source_ber_change": 0.0
+  },
+  {
+    "strategy": "scratch",
+    "num_seeds": 3,
+    "trainable_parameters": 813202,
+    "mean_target_ber_after": 0.3010323588053385,
+    "std_target_ber_after": 0.0022663742623536855,
+    "mean_target_improvement": 0.1994408162434896,
+    "std_target_improvement": 0.0015361501329386677,
+    "mean_source_ber_change": -0.08484924316406246,
+    "std_source_ber_change": 0.008906176879440453
+  }
+]
